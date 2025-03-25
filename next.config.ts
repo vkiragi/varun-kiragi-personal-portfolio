@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: "export",
+  assetPrefix: "/varun-kiragi-personal-portfolio/",
 };
 
 export default nextConfig;
