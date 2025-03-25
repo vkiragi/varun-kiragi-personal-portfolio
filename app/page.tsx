@@ -13,7 +13,8 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
-import { useState, useRef } from "react"; // Import useRef and useEffect
+import { useRef } from "react";
+import Image from "next/image";
 
 const projects = [
   {
@@ -86,7 +87,7 @@ const experience = [
     position: "Software Engineer Intern",
     duration: "May 2024 - Aug 2024",
     achievements: [
-      "As the sole developer on this team, I engineered a cutting-edge voice assistant bot using React Native's Speech Recognition API and custom algorithms, enabling users to manage schedules via voice commands, resulting in overwhelmingly positive feedback on app accessibility",
+      "As the sole developer on this team, I engineered a cutting-edge voice assistant bot using React Native&apos;s Speech Recognition API and custom algorithms, enabling users to manage schedules via voice commands, resulting in overwhelmingly positive feedback on app accessibility",
       "Spearheaded bug-fixing initiatives, significantly reducing app crashes and improving overall stability",
       "Implemented robust error handling and monitoring practices, resulting in enhanced application performance and user experience",
       "Conducted regular code reviews, refactored legacy components, and introduced a comprehensive testing strategy, substantially enhancing code quality and minimizing regression bugs across multiple app releases.",
@@ -99,7 +100,7 @@ const experience = [
     duration: "Sep 2023 - May 2024",
     achievements: [
       "Optimized web scraping algorithms in Python using pandas and Beautiful Soup, achieving a 20% reduction in execution time, leading to streamlined data acquisition processes, facilitating more efficient data updates and improving system performance.",
-      "Revamped the app's interface, done in TypeScript and React Native, enabling smooth navigation, and incorporating user friendly input features, resulting in an increase in user satisfaction.",
+      "Revamped the app&apos;s interface, done in TypeScript and React Native, enabling smooth navigation, and incorporating user friendly input features, resulting in an increase in user satisfaction.",
       "Successfully implemented data handling improvements, leading to a reduction in execution time, which significantly boosted system performance and overall user engagement.",
     ],
     isClickable: false,
@@ -107,7 +108,7 @@ const experience = [
 ];
 
 export default function Home() {
-  const [visibleSection, setVisibleSection] = useState("hero");
+  // const [visibleSection, setVisibleSection] = useState("hero");
   const aboutRef = useRef<HTMLDivElement>(null); // Create a ref
 
   const scrollToAbout = () => {
@@ -188,9 +189,9 @@ export default function Home() {
           >
             <h2 className="text-3xl font-bold mb-8">About Me</h2>
             <p className="text-lg text-muted-foreground mb-6">
-              I'm a software engineer with a strong foundation in full-stack
-              development and data analysis, with a growing passion for applying
-              these skills to solve complex problems in finance.
+              I&apos;m a software engineer with a strong foundation in
+              full-stack development and data analysis, with a growing passion
+              for applying these skills to solve complex problems in finance.
             </p>
           </motion.div>
         </div>
@@ -298,10 +299,11 @@ export default function Home() {
                   }`}
                 >
                   <div className="aspect-video relative">
-                    <img
+                    <Image
                       src={project.image}
                       alt={project.title}
-                      className="object-cover w-full h-full"
+                      fill
+                      className="object-cover"
                     />
                   </div>
                   <div className="p-6">
@@ -362,7 +364,7 @@ export default function Home() {
           >
             <h2 className="text-3xl font-bold mb-8">Get In Touch</h2>
             <p className="text-lg text-muted-foreground mb-8">
-              I'm currently open to new opportunities. Whether you have a
+              I&apos;m currently open to new opportunities. Whether you have a
               question or want to connect, please feel free to email me.
             </p>
             <Button
