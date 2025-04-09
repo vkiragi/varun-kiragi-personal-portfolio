@@ -16,7 +16,18 @@ import { motion } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
 
-const projects = [
+// First, let's define the type for a project
+type Project = {
+  title: string;
+  description: string;
+  image: string;
+  tags: string[];
+  github?: string;  // optional
+  demo?: string;    // optional
+  isClickable: boolean;
+};
+
+const projects: Project[] = [
   {
     title: "Stock Sentiment Analyzer",
     description: "Built a real-time sentiment pipeline simulating 10,000+ financial tweets/min, filtering spam and extracting $TICKER symbols with >98% accuracy. Applied VADER sentiment analysis and aggregated results using Spark Structured Streaming with 5-min sliding windows updated every minute.",
