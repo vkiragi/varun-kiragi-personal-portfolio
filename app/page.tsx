@@ -18,32 +18,19 @@ import Image from "next/image";
 
 const projects = [
   {
-    title: "Bhavya Solutions Website",
-    description:
-      "A real-time collaboration platform built with Next.js, TypeScript and Tailwind CSS.",
-    image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop",
-    tags: ["Next.js", "JavaScript", "React", "HTML", "CSS", "Tailwind CSS"],
-    github: "https://github.com",
-    demo: "https://bhavyasolutions.com/",
-    isClickable: true,
+    title: "Stock Sentiment Analyzer",
+    description: "Built a real-time sentiment pipeline simulating 10,000+ financial tweets/min, filtering spam and extracting $TICKER symbols with >98% accuracy. Applied VADER sentiment analysis and aggregated results using Spark Structured Streaming with 5-min sliding windows updated every minute.",
+    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=2340&auto=format&fit=crop",
+    tags: ["Python", "Apache Spark", "VADER", "NLP", "Real-time Processing", "Data Streaming"],
+    isClickable: false
   },
   {
-    title: "Formula 1 Race Winner Prediction Model",
-    description:
-      "A machine learning model built to predict Formula 1 race winners using historical data, featuring optimized feature selection and robust data preprocessing across multiple datasets.",
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2340&auto=format&fit=crop",
-    tags: [
-      "Python",
-      "Machine Learning",
-      "pandas",
-      "NumPy",
-      "Data Analysis",
-      "Scikit-learn",
-    ],
-    github: "https://github.com",
-    isClickable: true,
+    title: "Stock Screener & Valuation Tool",
+    description: "Developed an interactive web app to analyze public stocks using real-time data from Yahoo Finance. Built a customizable 2-stage DCF model with sensitivity analysis for dynamic intrinsic value comparisons.",
+    image: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=2340&auto=format&fit=crop",
+    tags: ["Python", "yfinance API", "Financial Analysis", "DCF Modeling", "Data Visualization"],
+    github: "https://github.com/vkiragi/stock-valuation-tool",
+    isClickable: true
   },
 ];
 
@@ -321,29 +308,30 @@ export default function Home() {
                       ))}
                     </div>
                     <div className="flex gap-4">
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        className="cursor-pointer"
-                        onClick={() => window.open(project.github, "_blank")}
-                      >
-                        <Github className="h-4 w-4 mr-2" />
-                        Code
-                      </Button>
-                      {/* Conditionally render the Demo button */}
-                      {project.demo &&
-                        project.title !==
-                          "Formula 1 Race Winner Prediction Model" && (
-                          <Button
-                            variant="outline"
-                            size="sm"
-                            className="cursor-pointer"
-                            onClick={() => window.open(project.demo, "_blank")}
-                          >
-                            <ExternalLink className="h-4 w-4 mr-2" />
-                            Demo
-                          </Button>
-                        )}
+                      {/* Only show GitHub button if github link exists */}
+                      {project.github && (
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="cursor-pointer"
+                          onClick={() => window.open(project.github, "_blank")}
+                        >
+                          <Github className="h-4 w-4 mr-2" />
+                          Code
+                        </Button>
+                      )}
+                      {/* Only show Demo button if demo link exists */}
+                      {project.demo && (
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="cursor-pointer"
+                          onClick={() => window.open(project.demo, "_blank")}
+                        >
+                          <ExternalLink className="h-4 w-4 mr-2" />
+                          Demo
+                        </Button>
+                      )}
                     </div>
                   </div>
                 </Card>
