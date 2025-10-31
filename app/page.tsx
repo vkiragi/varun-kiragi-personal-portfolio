@@ -236,7 +236,7 @@ export default function Home() {
           >
             <h2 className="text-3xl font-bold mb-8">About Me</h2>
             <p className="text-lg text-muted-foreground mb-6">
-              I'm a software engineer with a passion for building polished
+              I&apos;m a software engineer with a passion for building polished
               frontend and fullstack applications that deliver real value to
               users. I enjoy designing clean interfaces, architecting efficient
               systems, and tackling complex technical challenges with thoughtful
