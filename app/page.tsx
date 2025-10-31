@@ -8,6 +8,7 @@ import {
   ChevronDown,
   GraduationCap,
   Briefcase,
+  FileText,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -22,26 +23,64 @@ type Project = {
   description: string;
   image: string;
   tags: string[];
-  github?: string;  // optional
-  demo?: string;    // optional
+  github?: string; // optional
+  demo?: string; // optional
   isClickable: boolean;
 };
 
 const projects: Project[] = [
   {
+    title: "MailFind",
+    description:
+      "MailFind is a full-stack intelligent email search tool that uses natural language queries to find messages quickly and accurately. It combines GPT-powered query parsing with vector similarity search, Google OAuth integration, and a Chrome Extension UI for seamless Gmail access. Built with FastAPI, React, and Supabase, it delivers fast, structured results through a polished, AI-driven user experience.",
+    image:
+      "https://images.unsplash.com/photo-1596526131083-e8c633c948d2?q=80&w=2340&auto=format&fit=crop",
+    tags: [
+      "TypeScript",
+      "FastAPI",
+      "React",
+      "Supabase",
+      "Natural Language Processing",
+      "GPT-5",
+      "Vector Search",
+      "Chrome Extension",
+      "Email Search",
+      "OAuth2",
+    ],
+    github: "https://github.com/vkiragi/stock-valuation-tool",
+    isClickable: true,
+  },
+  {
     title: "Stock Sentiment Analyzer",
-    description: "Built a real-time sentiment pipeline simulating 10,000+ financial tweets/min, filtering spam and extracting $TICKER symbols with >98% accuracy. Applied VADER sentiment analysis and aggregated results using Spark Structured Streaming with 5-min sliding windows updated every minute.",
-    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=2340&auto=format&fit=crop",
-    tags: ["Python", "Apache Spark", "VADER", "NLP", "Real-time Processing", "Data Streaming"],
-    isClickable: false
+    description:
+      "Built a real-time sentiment pipeline simulating 10,000+ financial tweets/min, filtering spam and extracting $TICKER symbols with >98% accuracy. Applied VADER sentiment analysis and aggregated results using Spark Structured Streaming with 5-min sliding windows updated every minute.",
+    image:
+      "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=2340&auto=format&fit=crop",
+    tags: [
+      "Python",
+      "Apache Spark",
+      "VADER",
+      "NLP",
+      "Real-time Processing",
+      "Data Streaming",
+    ],
+    isClickable: false,
   },
   {
     title: "Stock Screener & Valuation Tool",
-    description: "Developed an interactive web app to analyze public stocks using real-time data from Yahoo Finance. Built a customizable 2-stage DCF model with sensitivity analysis for dynamic intrinsic value comparisons.",
-    image: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=2340&auto=format&fit=crop",
-    tags: ["Python", "yfinance API", "Financial Analysis", "DCF Modeling", "Data Visualization"],
+    description:
+      "Developed an interactive web app to analyze public stocks using real-time data from Yahoo Finance. Built a customizable 2-stage DCF model with sensitivity analysis for dynamic intrinsic value comparisons.",
+    image:
+      "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=2340&auto=format&fit=crop",
+    tags: [
+      "Python",
+      "yfinance API",
+      "Financial Analysis",
+      "DCF Modeling",
+      "Data Visualization",
+    ],
     github: "https://github.com/vkiragi/stock-valuation-tool",
-    isClickable: true
+    isClickable: true,
   },
 ];
 
@@ -132,7 +171,7 @@ export default function Home() {
           <p className="text-xl md:text-2xl text-muted-foreground mb-8">
             Software Engineer
           </p>
-          <div className="flex gap-4 justify-center mb-12">
+          <div className="flex gap-4 justify-center mb-8">
             <Button
               variant="outline"
               size="icon"
@@ -162,6 +201,16 @@ export default function Home() {
               <Mail className="h-5 w-5" />
             </Button>
           </div>
+          <div className="flex justify-center mb-12">
+            <Button
+              variant="default"
+              className="cursor-pointer"
+              onClick={() => window.open("/resume.pdf", "_blank")}
+            >
+              <FileText className="h-5 w-5 mr-2" />
+              Resume
+            </Button>
+          </div>
         </motion.div>
         <motion.div
           initial={{ opacity: 0 }}
@@ -187,9 +236,14 @@ export default function Home() {
           >
             <h2 className="text-3xl font-bold mb-8">About Me</h2>
             <p className="text-lg text-muted-foreground mb-6">
-              I&apos;m a software engineer with a strong foundation in
-              full-stack development and data analysis, with a growing passion
-              for applying these skills to solve complex problems in finance.
+              I'm a software engineer with a passion for building polished
+              frontend and fullstack applications that deliver real value to
+              users. I enjoy designing clean interfaces, architecting efficient
+              systems, and tackling complex technical challenges with thoughtful
+              solutions. My interests span web development, AI integration, and
+              creating tools that are both impactful and intuitive. I care
+              deeply about code quality, performance, and crafting experiences
+              that feel seamless and purposeful.
             </p>
           </motion.div>
         </div>
