@@ -47,7 +47,7 @@ const projects: Project[] = [
       "Email Search",
       "OAuth2",
     ],
-    github: "https://github.com/vkiragi/stock-valuation-tool",
+    github: "https://github.com/vkiragi/MailFind",
     isClickable: true,
   },
   {
