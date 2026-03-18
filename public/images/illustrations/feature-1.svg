@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 804 603" fill="none">
+  <rect width="804" height="603" rx="0" fill="#f0f0f0"/>
+  <rect x="182" y="131" width="440" height="340" rx="24" fill="none" stroke="#000" stroke-width="6"/>
+  <rect x="182" y="131" width="440" height="52" rx="24" fill="none" stroke="#000" stroke-width="6"/>
+  <circle cx="214" cy="157" r="8" fill="#000"/>
+  <circle cx="244" cy="157" r="8" fill="#000"/>
+  <circle cx="274" cy="157" r="8" fill="#000"/>
+  <text x="232" y="238" font-family="monospace" font-size="28" fill="#000" opacity="0.7">&gt;_ build</text>
+  <text x="232" y="278" font-family="monospace" font-size="28" fill="#000" opacity="0.4">&gt;_ deploy</text>
+  <text x="232" y="318" font-family="monospace" font-size="28" fill="#000" opacity="0.4">&gt;_ ship</text>
+  <rect x="232" y="340" width="16" height="28" fill="#000" opacity="0.7">
+    <animate attributeName="opacity" values="0.7;0;0.7" dur="1.2s" repeatCount="indefinite"/>
+  </rect>
+</svg>

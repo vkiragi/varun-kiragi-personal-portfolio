@@ -103,8 +103,10 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                     href={
                       (project.links as { live?: string; repo?: string }).live
                     }
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    {site.labels.viewLive}
+                    {new URL((project.links as { live?: string; repo?: string }).live!).hostname.replace("www.", "")}
                   </a>
                 )}
                 {(project.links as { live?: string; repo?: string }).repo && (
@@ -112,6 +114,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                     href={
                       (project.links as { live?: string; repo?: string }).repo
                     }
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     {site.labels.viewCode}
                   </a>

@@ -27,7 +27,7 @@ export const site = {
   ],
   nav: [
     { label: "Home", href: "/" },
-    { label: "Projects", href: "/projects" },
+    { label: "Work", href: "/projects" },
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
   ],
@@ -38,7 +38,7 @@ export const site = {
   },
   sections: {
     projects: {
-      title: "Projects",
+      title: "Work",
       subtitle: "Selected engineering work across full-stack, AI, and Web3.",
     },
     experience: {
@@ -67,7 +67,7 @@ export const site = {
     highlights: "Highlights",
     projectLinks: "Project Links",
     viewLive: "Live",
-    viewCode: "Code",
+    viewCode: "GitHub",
     viewProject: "View project",
     backToProjects: "Back to projects",
     seeAllProjects: "See all projects",
@@ -123,6 +123,19 @@ export const site = {
   ],
   projects: [
     {
+      slug: "briefing",
+      title: "Briefing",
+      summary:
+        "Sports and news tracking platform with FastAPI backend and React frontend.",
+      stack: ["FastAPI", "React", "Python", "Netlify", "Docker"],
+      links: { live: "https://yourbriefing.io", repo: "https://github.com/vkiragi/your-briefing" },
+      highlights: [
+        "Integrated web scraping and public APIs for real-time updates.",
+        "Built a terminal-based CLI with Rich alongside a modern web UI.",
+        "Containerized backend and implemented CI/CD via GitHub Actions.",
+      ],
+    },
+    {
       slug: "mailfind",
       title: "MailFind",
       summary:
@@ -140,19 +153,6 @@ export const site = {
         "Built GPT-5 nano query parsing for structured JSON search inputs.",
         "Designed OAuth2 flow with encrypted token storage and async indexing.",
         "Shipped a Gmail-injected Chrome extension with real-time AI responses.",
-      ],
-    },
-    {
-      slug: "briefing",
-      title: "Briefing",
-      summary:
-        "Sports and news tracking platform with FastAPI backend and React frontend.",
-      stack: ["FastAPI", "React", "Python", "Netlify", "Docker"],
-      links: {},
-      highlights: [
-        "Integrated web scraping and public APIs for real-time updates.",
-        "Built a terminal-based CLI with Rich alongside a modern web UI.",
-        "Containerized backend and implemented CI/CD via GitHub Actions.",
       ],
     },
     {
@@ -202,20 +202,20 @@ export const site = {
   ],
   featuredItems: [
     {
-      image: "/images/illustrations/feature-1.png",
+      image: "/images/illustrations/feature-1.svg",
       title: "Projects",
       description: "Full-stack, AI, and Web3 engineering work I've shipped.",
       cta: { label: "View All", href: "/projects" },
     },
     {
-      image: "/images/illustrations/feature-2.png",
+      image: "/images/illustrations/feature-2.svg",
       title: "Experience",
       description:
         "Internships and engineering roles in production environments.",
       cta: { label: "Learn More", href: "/about" },
     },
     {
-      image: "/images/illustrations/feature-3.png",
+      image: "/images/illustrations/feature-3.svg",
       title: "Get in Touch",
       description:
         "Open to full-time roles, collaborations, and conversations.",

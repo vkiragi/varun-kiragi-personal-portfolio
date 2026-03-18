@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { AngledSeparator } from "@/components/ui/AngledSeparator";
@@ -87,11 +86,9 @@ export default function Home() {
             }}
             className="flex flex-col"
           >
-            <Image
+            <img
               src={item.image}
               alt={item.title}
-              width={804}
-              height={603}
               className="w-full"
               style={{ borderRadius: 0 }}
             />
