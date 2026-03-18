@@ -29,7 +29,7 @@
 :root {
   color-scheme: light;
 
-  /* Colors (Cliff: pure black & white) */
+  /* Colors: Light (Cliff) */
   --color-foreground: #000;
   --color-background: #fff;
   --color-primary: #000;
@@ -72,6 +72,16 @@
   /* Layout */
   --content-width: 720px;
   --wide-width: 1680px;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-foreground: #fff !important;
+  --color-background: #1a1a1a !important;
+  --color-primary: #fff !important;
+  --color-secondary: #aaa !important;
+  --color-tertiary: #555 !important;
+  --color-quaternary: #2a2a2a !important;
 }
 
 /* ------------------------------------------- */
@@ -149,8 +159,8 @@
   }
 
   ::selection {
-    background: rgba(0, 0, 0, 0.15);
-    color: #000;
+    background: color-mix(in srgb, var(--color-foreground) 15%, transparent);
+    color: var(--color-foreground);
   }
 
   /* Inputs */

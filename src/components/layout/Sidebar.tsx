@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { site } from "@/content/site";
 
 export function Sidebar() {
@@ -70,6 +71,7 @@ export function Sidebar() {
               {link.label}
             </a>
           ))}
+        <ThemeToggle />
       </div>
     </aside>
   );

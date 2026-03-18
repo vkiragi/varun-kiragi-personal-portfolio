@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { site } from "@/content/site";
 
 export function MobileHeader() {
@@ -28,9 +29,11 @@ export function MobileHeader() {
           {site.name}
         </Link>
 
-        <button
-          type="button"
-          onClick={() => setMenuOpen((o) => !o)}
+        <div className="flex items-center" style={{ gap: "1em" }}>
+          <ThemeToggle />
+          <button
+            type="button"
+            onClick={() => setMenuOpen((o) => !o)}
           aria-expanded={menuOpen}
           style={{
             fontSize: "var(--font-size-small)",
@@ -41,8 +44,9 @@ export function MobileHeader() {
             color: "var(--color-foreground)",
           }}
         >
-          {menuOpen ? "Close" : "Menu"}
-        </button>
+            {menuOpen ? "Close" : "Menu"}
+          </button>
+        </div>
       </div>
 
       {menuOpen && (
