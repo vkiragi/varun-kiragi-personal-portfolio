@@ -32,14 +32,9 @@ export function Education() {
                 <p style={{ margin: 0, fontWeight: 600 }}>
                   {item.degree}
                   {"specialization" in item && item.specialization && (
-                    <span
-                      style={{
-                        fontWeight: 400,
-                        fontSize: "var(--font-size-small)",
-                        color: "var(--color-secondary)",
-                      }}
-                    >
-                      , ({item.specialization})
+                    <span style={{ fontWeight: 400 }}>
+                      {" "}
+                      ({item.specialization})
                     </span>
                   )}
                 </p>
