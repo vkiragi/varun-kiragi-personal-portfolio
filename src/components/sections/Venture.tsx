@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Chip } from "@/components/ui/Chip";
+import { ProjectBullets } from "@/components/ui/ProjectBullets";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { site } from "@/content/site";
@@ -14,6 +15,7 @@ type Venture = {
   status?: string;
   timeframe?: string;
   highlights: readonly string[];
+  engineering?: readonly string[];
 };
 
 export function Venture() {
@@ -23,8 +25,9 @@ export function Venture() {
 
   if (!project) return null;
 
-  const { title, summary, stack, links, role, status, timeframe, highlights, slug } =
+  const { title, summary, stack, links, role, status, timeframe, highlights, engineering, slug } =
     project;
+  const bullets = engineering ?? highlights;
 
   return (
     <section id="venture" style={{ scrollMarginTop: "5rem" }}>
@@ -83,29 +86,9 @@ export function Venture() {
             {summary}
           </p>
 
-          <ul
-            className="flex flex-col"
-            style={{
-              gap: "0.75rem",
-              listStyle: "none",
-              padding: 0,
-              margin: "1.75rem 0 0",
-              fontSize: "var(--font-size-small)",
-              color: "var(--color-secondary)",
-            }}
-          >
-            {highlights.slice(0, 4).map((item) => (
-              <li key={item} style={{ display: "flex", gap: "0.75rem" }}>
-                <span
-                  aria-hidden="true"
-                  style={{ color: "var(--color-accent-bright)" }}
-                >
-                  —
-                </span>
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
+          <div style={{ marginTop: "1.75rem" }}>
+            <ProjectBullets bullets={bullets} limit={3} />
+          </div>
 
           <div
             className="flex flex-wrap"

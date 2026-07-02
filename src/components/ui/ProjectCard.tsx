@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Chip } from "@/components/ui/Chip";
+import { ProjectBullets } from "@/components/ui/ProjectBullets";
 
 type Project = {
   slug: string;
@@ -10,6 +11,8 @@ type Project = {
   category?: string;
   role?: string;
   image?: string;
+  highlights?: readonly string[];
+  engineering?: readonly string[];
 };
 
 type ProjectCardProps = {
@@ -19,7 +22,9 @@ type ProjectCardProps = {
 };
 
 export function ProjectCard({ project, featured = false, labels }: ProjectCardProps) {
-  const { title, summary, stack, links, category, role, slug, image } = project;
+  const { title, summary, stack, links, category, role, slug, image, highlights, engineering } =
+    project;
+  const bullets = engineering ?? highlights ?? [];
 
   return (
     <article
@@ -88,6 +93,8 @@ export function ProjectCard({ project, featured = false, labels }: ProjectCardPr
         >
           {summary}
         </p>
+
+        <ProjectBullets bullets={bullets} />
 
         <div
           className="flex flex-wrap"
