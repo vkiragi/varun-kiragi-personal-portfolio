@@ -126,13 +126,29 @@ export const site = {
       slug: "briefing",
       title: "Briefing",
       summary:
-        "Sports and news tracking platform with FastAPI backend and React frontend.",
-      stack: ["FastAPI", "React", "Python", "Netlify", "Docker"],
+        "Live sports scores, bet tracking, and analytics — all in one app. A full-stack sports platform that aggregates live scores, odds, and news across 20+ sports into a single dashboard. Users can track bets with detailed analytics, monitor prop lines in real-time, and pin games for quick access.",
+      stack: ["React", "TypeScript", "Tailwind CSS", "FastAPI", "Python", "Supabase", "Netlify", "Fly.io"],
       links: { live: "https://yourbriefing.io", repo: "https://github.com/vkiragi/your-briefing" },
       highlights: [
-        "Integrated web scraping and public APIs for real-time updates.",
-        "Built a terminal-based CLI with Rich alongside a modern web UI.",
-        "Containerized backend and implemented CI/CD via GitHub Actions.",
+        "Live scores and odds across NFL, NBA, MLB, NHL, NCAA, Soccer (15+ leagues), F1, Tennis, and Boxing.",
+        "Full bet tracking with parlay support, bankroll management, and performance analytics.",
+        "Real-time prop line monitoring with automatic refresh.",
+        "Favorite teams with personalized game feeds.",
+        "Cross-platform — responsive web app and native iOS via Capacitor.",
+      ],
+    },
+    {
+      slug: "nba-win-probability",
+      title: "NBA Win-Probability Prediction",
+      summary:
+        "End-to-end ML system that predicts NBA game win probabilities, served as an interactive web app with game-by-game backtest report cards.",
+      stack: ["Python", "scikit-learn", "XGBoost", "Streamlit"],
+      links: { live: "https://nba-win-probability.streamlit.app" },
+      highlights: [
+        "Engineered a leakage-safe pipeline validated with walk-forward testing over 22,800+ held-out games across 19 seasons.",
+        "Prioritized proper scoring rules (log loss, Brier) and probability calibration over raw accuracy.",
+        "Best model (logistic regression on Elo + rolling form/rest features) beat a strong Elo baseline while staying well-calibrated.",
+        "Benchmarked against the betting market and honestly reported no edge after the house margin after debugging a data error.",
       ],
     },
     {
@@ -161,7 +177,7 @@ export const site = {
       summary:
         "Security pipeline enhancements for data exfiltration detection in production.",
       stack: ["Kubernetes", "Python", "ML Services"],
-      links: {},
+      links: { repo: "https://github.com/arunrao/rampart-ai" },
       highlights: [
         "Implemented readiness/liveness endpoints with real service checks.",
         "Designed weighted pattern scoring to improve detection accuracy.",
