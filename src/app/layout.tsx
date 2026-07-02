@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/ThemeProvider";
-import { Sidebar } from "@/components/layout/Sidebar";
-import { MobileHeader } from "@/components/layout/MobileHeader";
+import { TopNav } from "@/components/layout/TopNav";
 import { Footer } from "@/components/ui/Footer";
 import { site } from "@/content/site";
 import "../styles/globals.css";
@@ -30,33 +29,19 @@ export default function RootLayout({
       </head>
       <body>
         <ThemeProvider>
-          {/* Mobile header -- hidden on desktop */}
-          <MobileHeader />
+          <TopNav />
 
-          {/* Two-column layout */}
-          <div
-            className="mx-auto flex"
+          <main
+            className="mx-auto"
             style={{
-              maxWidth: "var(--wide-width)",
-              padding: "var(--spacing-outer)",
-              gap: "var(--spacing-gutter)",
-              minHeight: "100vh",
+              maxWidth: "var(--content-max)",
+              padding: "var(--spacing-80) var(--spacing-outer)",
             }}
           >
-            {/* Sidebar column -- hidden on mobile */}
-            <div
-              className="hidden min-[782px]:block shrink-0"
-              style={{ flexBasis: "23%" }}
-            >
-              <Sidebar />
-            </div>
+            {children}
+          </main>
 
-            {/* Main content column */}
-            <div className="min-w-0 flex-1">
-              <main>{children}</main>
-              <Footer />
-            </div>
-          </div>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

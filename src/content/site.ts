@@ -13,6 +13,10 @@ export const site = {
       href: "mailto:varunkiragi@icloud.com",
     },
     {
+      label: "GitHub",
+      href: "https://github.com/vkiragi",
+    },
+    {
       label: "LinkedIn",
       href: "https://linkedin.com/in/vkiragi/",
     },
@@ -21,25 +25,33 @@ export const site = {
       href: "https://varun-kiragi.netlify.app/",
     },
     {
+      label: "Resume",
+      href: "/Varun_Kiragi_Resume.pdf",
+    },
+    {
       label: "Phone",
       href: "tel:+14085077026",
     },
   ],
   nav: [
-    { label: "Home", href: "/" },
-    { label: "Work", href: "/projects" },
-    { label: "About", href: "/about" },
-    { label: "Contact", href: "/contact" },
+    { label: "Ventures", href: "/#venture" },
+    { label: "Work", href: "/#work" },
+    { label: "Experience", href: "/#experience" },
+    { label: "Skills", href: "/#skills" },
+    { label: "Contact", href: "/#contact" },
   ],
   hero: {
-    kicker: "Software Developer",
-    primaryCta: { label: "View Projects", href: "/projects" },
-    secondaryCta: { label: "Contact Me", href: "/contact" },
+    intro:
+      "I build reliable, user-focused products across web, mobile, and AI — from smart-contract dApps and production security systems to data-driven applications, with a focus on performance and thoughtful UX.",
   },
   sections: {
+    venture: {
+      title: "Ventures",
+      subtitle: "A solo product I design, build, and grow.",
+    },
     projects: {
-      title: "Work",
-      subtitle: "Selected engineering work across full-stack, AI, and Web3.",
+      title: "Selected work",
+      subtitle: "Engineering projects across ML, full-stack, and security.",
     },
     experience: {
       title: "Experience",
@@ -59,7 +71,8 @@ export const site = {
     },
     contact: {
       title: "Contact",
-      subtitle: "Open to full-time roles and collaborations.",
+      subtitle:
+        "Currently seeking full-time roles and internships — also open to interesting projects.",
     },
   },
   labels: {
@@ -79,13 +92,22 @@ export const site = {
   },
   experience: [
     {
+      company: "Briefing",
+      role: "Founder & Engineer",
+      dates: "Nov 2025 - Present",
+      highlights: [
+        "Built and shipped a full-stack iOS app to the App Store with in-app subscriptions, delivering live scores and AI-powered bet tracking across 20+ sports including NFL, NBA, Tennis, and F1.",
+        "Engineered a Python/FastAPI backend with real-time API integrations, deployed on Fly.io with rate limiting and connection pooling for production-scale performance.",
+        "Built a React + TypeScript frontend with Capacitor for iOS, featuring machine learning-driven insights via Gemini 2.5 Flash and a personalized news feed.",
+      ],
+    },
+    {
       company: "The Honey Jar",
       role: "Software Engineer Intern",
       dates: "Sep 2024 - Nov 2024",
       highlights: [
-        "Led development of a Coin Flip dApp on Berachain with Next.js and Tailwind CSS.",
-        "Optimized NFT smart contracts, improving gas efficiency by 15%.",
-        "Debugged and enhanced blockchain indexer workflows for transaction analytics.",
+        "Led development of a Coin Flip game dApp on Berachain, integrating smart contract interactions with a Next.js and Tailwind CSS frontend.",
+        "Optimized smart contracts for NFT projects, improving gas efficiency by 15% and increasing user interactions by 20% through enhanced dApp features.",
       ],
     },
     {
@@ -93,9 +115,8 @@ export const site = {
       role: "Software Engineer Intern",
       dates: "May 2024 - Aug 2024",
       highlights: [
-        "Built a voice assistant bot in React Native with speech recognition.",
-        "Reduced crashes by spearheading bug-fix and stability improvements.",
-        "Introduced testing, error handling, and refactoring practices.",
+        "Engineered a voice assistant using React Native's Speech Recognition API as sole developer, enabling users to manage schedules via voice commands.",
+        "Reduced app crashes through targeted bug-fixing and error handling; refactored legacy components and introduced a testing strategy that minimized regression bugs across releases.",
       ],
     },
     {
@@ -125,10 +146,18 @@ export const site = {
     {
       slug: "briefing",
       title: "Briefing",
+      featured: true,
+      category: "Full-stack · iOS",
+      role: "Solo founder & engineer",
+      status: "Live on the US App Store",
+      timeframe: "Nov 2025 — present",
       summary:
         "Live sports scores, bet tracking, and analytics — all in one app. A full-stack sports platform that aggregates live scores, odds, and news across 20+ sports into a single dashboard. Users can track bets with detailed analytics, monitor prop lines in real-time, and pin games for quick access.",
       stack: ["React", "TypeScript", "Tailwind CSS", "FastAPI", "Python", "Supabase", "Netlify", "Fly.io"],
-      links: { live: "https://yourbriefing.io", repo: "https://github.com/vkiragi/your-briefing" },
+      links: {
+        appStore: "https://apps.apple.com/us/app/briefing-sports-bet-tracker/id6758562551",
+        live: "https://yourbriefing.io",
+      },
       highlights: [
         "Live scores and odds across NFL, NBA, MLB, NHL, NCAA, Soccer (15+ leagues), F1, Tennis, and Boxing.",
         "Full bet tracking with parlay support, bankroll management, and performance analytics.",
@@ -136,10 +165,16 @@ export const site = {
         "Favorite teams with personalized game feeds.",
         "Cross-platform — responsive web app and native iOS via Capacitor.",
       ],
+      engineering: [
+        "Built and shipped a full-stack iOS app to the App Store with in-app subscriptions, delivering live scores and AI-powered bet tracking across 20+ sports including NFL, NBA, Tennis, and F1.",
+        "Engineered a Python/FastAPI backend with real-time API integrations, deployed on Fly.io with rate limiting and connection pooling for production-scale performance.",
+        "Built a React + TypeScript frontend with Capacitor for iOS, featuring machine learning-driven insights via Gemini 2.5 Flash and a personalized news feed.",
+      ],
     },
     {
       slug: "nba-win-probability",
       title: "NBA Win-Probability Prediction",
+      category: "Machine learning",
       summary:
         "End-to-end ML system that predicts NBA game win probabilities, served as an interactive web app with game-by-game backtest report cards.",
       stack: ["Python", "scikit-learn", "XGBoost", "Streamlit"],
@@ -154,6 +189,7 @@ export const site = {
     {
       slug: "mailfind",
       title: "MailFind",
+      category: "Full-stack · AI",
       summary:
         "Full-stack NLU search engine that converts conversational email queries into structured, high-precision search.",
       stack: [
@@ -164,24 +200,29 @@ export const site = {
         "React",
         "TypeScript",
       ],
-      links: {},
+      links: { repo: "https://github.com/vkiragi/MailFind" },
       highlights: [
-        "Built GPT-5 nano query parsing for structured JSON search inputs.",
-        "Designed OAuth2 flow with encrypted token storage and async indexing.",
-        "Shipped a Gmail-injected Chrome extension with real-time AI responses.",
+        "Engineered a full-stack NLU search engine using GPT-5 nano to parse conversational queries into structured JSON, powering a hybrid search combining Supabase filters and pgvector similarity.",
+        "Architected a Python/FastAPI backend with Google OAuth2, encrypted token storage via Fernet, and an async email indexing pipeline using open-source sentence-transformers for local vector embeddings.",
+        "Built a Chrome Extension in React and TypeScript injecting a dynamic UI into the Gmail DOM with real-time streaming AI responses.",
       ],
     },
     {
       slug: "rampart-ai",
       title: "Rampart AI",
+      role: "Contributor",
+      category: "Security · ML",
       summary:
         "Security pipeline enhancements for data exfiltration detection in production.",
       stack: ["Kubernetes", "Python", "ML Services"],
-      links: { repo: "https://github.com/arunrao/rampart-ai" },
+      links: {
+        repo: "https://github.com/arunrao/rampart-ai",
+        repoLabel: "GitHub (upstream repo)",
+      },
       highlights: [
-        "Implemented readiness/liveness endpoints with real service checks.",
-        "Designed weighted pattern scoring to improve detection accuracy.",
-        "Enabled risk-based severity classification for safer automated blocking.",
+        "Enhanced a production AI security pipeline by implementing Kubernetes-compatible readiness and liveness endpoints with real database and ML service verification.",
+        "Designed weighted pattern scoring for data exfiltration detection, differentiating bulk vs. targeted commands and ambiguous indicators to improve detection accuracy.",
+        "Contributed risk-based severity classification and open-sourced detection logic to the core DataExfiltrationMonitor, shipped in a production release.",
       ],
     },
     {
@@ -198,46 +239,32 @@ export const site = {
       ],
     },
   ],
-  skills: [
-    "TypeScript",
-    "JavaScript",
-    "Java",
-    "Python",
-    "HTML",
-    "CSS",
-    "SQL",
-    "Next.js",
-    "React",
-    "Node.js",
-    "PyTorch",
-    "TensorFlow",
-    "pandas",
-    "NumPy",
-    "scikit-learn",
-    "Tailwind CSS",
-  ],
-  featuredItems: [
-    {
-      image: "/images/illustrations/feature-1.svg",
-      title: "Projects",
-      description: "Full-stack, AI, and Web3 engineering work I've shipped.",
-      cta: { label: "View All", href: "/projects" },
-    },
-    {
-      image: "/images/illustrations/feature-2.svg",
-      title: "Experience",
-      description:
-        "Internships and engineering roles in production environments.",
-      cta: { label: "Learn More", href: "/about" },
-    },
-    {
-      image: "/images/illustrations/feature-3.svg",
-      title: "Get in Touch",
-      description:
-        "Open to full-time roles, collaborations, and conversations.",
-      cta: { label: "Contact Me", href: "/contact" },
-    },
-  ],
+  skills: {
+    languages: [
+      "TypeScript",
+      "JavaScript",
+      "Python",
+      "C",
+      "Java",
+      "SQL",
+      "HTML",
+      "CSS",
+    ],
+    frameworks: [
+      "React",
+      "Next.js",
+      "React Native",
+      "FastAPI",
+      "Node.js",
+      "PyTorch",
+      "scikit-learn",
+      "pandas",
+      "NumPy",
+      "Tailwind CSS",
+      "Capacitor",
+    ],
+    tools: ["Docker", "Kubernetes", "CI/CD", "Git", "Linux", "PostgreSQL", "Supabase"],
+  },
   footer: {
     text: "Open to full-time roles and impactful projects.",
   },

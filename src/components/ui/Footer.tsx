@@ -3,15 +3,24 @@ import { site } from "@/content/site";
 export function Footer() {
   return (
     <footer
-      className="flex flex-wrap items-center justify-between"
       style={{
-        paddingTop: "var(--spacing-70)",
-        fontSize: "var(--font-size-small)",
+        backgroundColor: "var(--color-surface-2)",
+        borderTop: "1px solid var(--color-border)",
       }}
     >
-      <p>
-        &copy; 2026 {site.name}
-      </p>
+      <div
+        className="mx-auto flex flex-wrap items-center justify-between"
+        style={{
+          maxWidth: "var(--content-max)",
+          padding: "var(--spacing-70) var(--spacing-outer)",
+          gap: "1rem",
+          fontFamily: "var(--font-family-mono)",
+          fontSize: "var(--font-size-tiny)",
+          color: "var(--color-muted)",
+        }}
+      >
+        <p style={{ margin: 0 }}>© 2026 {site.name}</p>
+      </div>
     </footer>
   );
 }
