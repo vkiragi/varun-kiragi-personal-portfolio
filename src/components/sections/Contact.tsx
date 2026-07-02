@@ -10,7 +10,7 @@ export function Contact() {
 
   return (
     <section id="contact" style={{ scrollMarginTop: "5rem" }}>
-      <SectionHeading number="05" title={site.sections.contact.title} />
+      <SectionHeading number="06" title={site.sections.contact.title} />
 
       <Reveal className="flex flex-col" style={{ gap: "1.5rem" }}>
         <p

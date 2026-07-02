@@ -17,7 +17,7 @@ export function Skills() {
 
   return (
     <section id="skills" style={{ scrollMarginTop: "5rem" }}>
-      <SectionHeading number="04" title={site.sections.skills.title} />
+      <SectionHeading number="05" title={site.sections.skills.title} />
 
       <div className="flex flex-col" style={{ gap: "1.75rem" }}>
         {groups.map(([key, items], i) => (

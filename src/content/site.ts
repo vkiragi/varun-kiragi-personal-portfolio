@@ -6,7 +6,7 @@ export const site = {
   shortBio:
     "Focused on building reliable, user-focused products across web, mobile, and AI.",
   longBio:
-    "I bring experience across full-stack systems, product-focused UI, and AI-enabled workflows. My work spans smart contract dApps, production security systems, and data-driven applications with a focus on performance, reliability, and thoughtful UX.",
+    "I bring experience across full-stack systems, product-focused UI, and AI-enabled workflows. My work spans mobile apps, production security systems, and data-driven applications with a focus on performance, reliability, and thoughtful UX.",
   links: [
     {
       label: "Email",
@@ -37,12 +37,13 @@ export const site = {
     { label: "Ventures", href: "/#venture" },
     { label: "Work", href: "/#work" },
     { label: "Experience", href: "/#experience" },
+    { label: "Education", href: "/#education" },
     { label: "Skills", href: "/#skills" },
     { label: "Contact", href: "/#contact" },
   ],
   hero: {
     intro:
-      "I build reliable, user-focused products across web, mobile, and AI — from smart-contract dApps and production security systems to data-driven applications, with a focus on performance and thoughtful UX.",
+      "Currently pursuing my M.S. in Computer Science at Georgia Tech. I build reliable, user-focused products across web, mobile, and AI — from iOS apps and ML systems to full-stack tools, with a focus on performance and thoughtful UX.",
   },
   sections: {
     venture: {
@@ -134,11 +135,14 @@ export const site = {
     {
       school: "Georgia Institute of Technology",
       degree: "M.S. in Computer Science",
-      dates: "Jan 2025 - Apr 2027",
+      specialization: "AI specialization",
+      location: "Atlanta, GA",
+      dates: "Jan 2025 - Apr 2027 (Expected)",
     },
     {
       school: "University of California, Davis",
       degree: "B.S. in Computer Science",
+      location: "Davis, CA",
       dates: "Sep 2019 - Jun 2023",
     },
   ],

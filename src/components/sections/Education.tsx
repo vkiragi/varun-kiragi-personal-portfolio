@@ -2,14 +2,14 @@ import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { site } from "@/content/site";
 
-export function Experience() {
+export function Education() {
   return (
-    <section id="experience" style={{ scrollMarginTop: "5rem" }}>
-      <SectionHeading number="03" title={site.sections.experience.title} />
+    <section id="education" style={{ scrollMarginTop: "5rem" }}>
+      <SectionHeading number="04" title={site.sections.education.title} />
 
       <div className="flex flex-col">
-        {site.experience.map((item, i) => (
-          <Reveal key={`${item.company}-${item.role}`} delay={i * 0.05}>
+        {site.education.map((item, i) => (
+          <Reveal key={`${item.school}-${item.degree}`} delay={i * 0.05}>
             <div
               className="grid grid-cols-1 sm:grid-cols-[15rem_1fr]"
               style={{
@@ -30,8 +30,18 @@ export function Experience() {
               </p>
               <div style={{ margin: 0 }}>
                 <p style={{ margin: 0, fontWeight: 600 }}>
-                  {item.role}
-                  <span style={{ color: "var(--color-muted)" }}> · {item.company}</span>
+                  {item.degree}
+                  {"specialization" in item && item.specialization && (
+                    <span
+                      style={{
+                        fontWeight: 400,
+                        fontSize: "var(--font-size-small)",
+                        color: "var(--color-secondary)",
+                      }}
+                    >
+                      , ({item.specialization})
+                    </span>
+                  )}
                 </p>
                 <p
                   style={{
@@ -40,7 +50,13 @@ export function Experience() {
                     color: "var(--color-secondary)",
                   }}
                 >
-                  {item.highlights[0]}
+                  {item.school}
+                  {item.location && (
+                    <span style={{ color: "var(--color-muted)" }}>
+                      {" "}
+                      · {item.location}
+                    </span>
+                  )}
                 </p>
               </div>
             </div>
