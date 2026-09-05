@@ -176,6 +176,33 @@ export const site = {
       ],
     },
     {
+      slug: "guardrail",
+      title: "Guardrail",
+      category: "AI Agent · Fintech",
+      role: "lablab.ai × Alpaca hackathon",
+      summary:
+        "An autonomous options-trading agent that structurally cannot reach the broker except through a deterministic risk layer. An LLM produces trading opinions (bullish, bearish, or skip) while a rules engine holds veto power over every order, making risk management structural instead of a matter of trusting the prompt.",
+      stack: [
+        "Python",
+        "OpenAI",
+        "Alpaca API",
+        "FastAPI",
+        "SQLite",
+        "Netlify",
+      ],
+      links: {
+        live: "https://guardrail-hackathon.netlify.app",
+        repo: "https://github.com/vkiragi/guardrail",
+      },
+      highlights: [
+        "Separated the agent (opinions only) from a deterministic engine that evaluates six configurable risk gates with no network calls or hallucination exposure.",
+        "Enforced drawdown halts, symbol allowlists, expiry windows, contract and position limits, and a market-close cutoff before any order reaches the broker.",
+        "Selected contracts deterministically (always ATM, 7+ days to expiry, one contract, limit orders only) to avoid thin options books.",
+        "Logged every decision and order to SQLite for a full audit trail, surfaced through a live dashboard.",
+        "Backed the engine with 22 unit tests, treating the control layer (not trading alpha) as the core innovation.",
+      ],
+    },
+    {
       slug: "nba-win-probability",
       title: "NBA Win-Probability Prediction",
       category: "Machine learning",
